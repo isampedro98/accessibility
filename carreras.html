@@ -1,12 +1,15 @@
 <!doctype html>
 <html lang="es">
+
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Carreras</title>
+    <title>Universidad | Carreras</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/navbar.css">
   </head>
+
   <body>
     <div data-include="site-header"></div>
     <main id="main">
@@ -20,22 +23,16 @@
           <td width="70%" valign="top">
             <h2>Oferta Academica</h2>
 
-            <div
-              class="acordeon-header"
-              onclick="toggleAcordeon('panel1')"
-              style="background:#ccc; padding:10px; cursor:pointer;"
-            >
+            <div class="acordeon-header" onclick="toggleAcordeon('panel1')"
+              style="background:#ccc; padding:10px; cursor:pointer;">
               Ingenieria en Sistemas <span>+</span>
             </div>
             <div id="panel1" style="display:none; padding:10px; border:1px solid #ccc;">
               Duracion: 5 anos. Requiere curso de ingreso.
             </div>
 
-            <div
-              class="acordeon-header"
-              onclick="toggleAcordeon('panel2')"
-              style="background:#ccc; padding:10px; cursor:pointer; margin-top:5px;"
-            >
+            <div class="acordeon-header" onclick="toggleAcordeon('panel2')"
+              style="background:#ccc; padding:10px; cursor:pointer; margin-top:5px;">
               Licenciatura en Diseno <span>+</span>
             </div>
             <div id="panel2" style="display:none; padding:10px; border:1px solid #ccc;">
@@ -45,6 +42,7 @@
         </tr>
       </table>
     </main>
+    <div data-include="site-footer"></div>
 
     <script>
       function toggleAcordeon(id) {
@@ -58,4 +56,5 @@
     </script>
     <script src="js/load-partials.js"></script>
   </body>
+
 </html>

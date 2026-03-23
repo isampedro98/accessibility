@@ -58,24 +58,32 @@ function setupSubnav(root) {
     });
 }
 
-async function loadHeaderPartial() {
-    const placeholder = document.querySelector('[data-include="site-header"]');
+async function loadPartial(includeName, path, setup = null) {
+    const placeholder = document.querySelector(`[data-include="${includeName}"]`);
 
     if (!placeholder) {
         return;
     }
 
-    const response = await fetch("./partials/site-header.html");
+    const response = await fetch(path);
 
     if (!response.ok) {
-        throw new Error(`No se pudo cargar el header compartido: ${response.status}`);
+        throw new Error(`No se pudo cargar el parcial ${includeName}: ${response.status}`);
     }
 
     placeholder.innerHTML = await response.text();
-    setActiveNavItem(placeholder);
-    setupSubnav(placeholder);
+
+    if (setup) {
+        setup(placeholder);
+    }
 }
 
-loadHeaderPartial().catch((error) => {
+Promise.all([
+    loadPartial("site-header", "./partials/site-header.html", (placeholder) => {
+        setActiveNavItem(placeholder);
+        setupSubnav(placeholder);
+    }),
+    loadPartial("site-footer", "./partials/site-footer.html")
+]).catch((error) => {
     console.error(error);
 });

@@ -1,22 +1,22 @@
 <!doctype html>
 <html lang="es">
+
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Universidad</title>
+    <title>Universidad | Inicio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/navbar.css">
   </head>
+
   <body>
     <div data-include="site-header"></div>
     <main id="main">
       <section>
         <h1 id="inicio-bienvenida">Bienvenidos a la universidad</h1>
         <div>
-          <img
-            src="images/fondo-bienvenida.avif"
-            alt="Bienvenidos a la universidad, inscripciones abiertas"
-          >
+          <img src="images/fondo-bienvenida.avif" alt="Bienvenidos a la universidad, inscripciones abiertas">
         </div>
       </section>
 
@@ -41,9 +41,11 @@
         <div onclick="cerrarModal()" style="cursor:pointer; color:blue;">Cerrar [X]</div>
       </div>
     </main>
+    <div data-include="site-footer"></div>
 
     <script src="js/load-partials.js"></script>
     <script src="js/scripts.js"></script>
     <script type="module" src="js/render-home.js"></script>
   </body>
+
 </html>

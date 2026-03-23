@@ -96,7 +96,39 @@
 
 .navbar a:focus-visible,
 .subnav .subnavbtn:focus-visible,
-.subnav-content a:focus-visible {
+.subnav-content a:focus-visible,
+.footer-nav a:focus-visible,
+.site-footer-contact a:focus-visible {
   outline: 3px solid #111;
   outline-offset: 2px;
+}
+
+.site-footer {
+  margin-top: 32px;
+  padding: 20px 16px;
+  background-color: #e0e0e0;
+  border-top: 1px solid #c8c8c8;
+}
+
+.site-footer-title {
+  margin: 0 0 10px;
+  font-weight: bold;
+  color: #222;
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.footer-nav a,
+.site-footer-contact,
+.site-footer-contact a {
+  color: #222;
+}
+
+.site-footer-contact {
+  margin: 0;
 }
