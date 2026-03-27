@@ -34,5 +34,65 @@
     "requirements": "Título secundario completo",
     "details": "Aborda administración, contabilidad básica, recursos humanos y herramientas digitales de oficina.",
     "url": "#carrera-cta"
+  },
+  {
+    "id": "carrera-cs",
+    "name": "Licenciatura en Comunicación Social",
+    "degree": "Licenciatura",
+    "duration": "4 años",
+    "modality": "Presencial",
+    "shift": ["mañana", "noche"],
+    "summary": "Formación en periodismo, análisis de medios, producción audiovisual y comunicación institucional.",
+    "requirements": "Curso de ingreso y presentación de documentación",
+    "details": "Incluye talleres de radio, redacción, fotografía, producción multimedia y comunicación pública.",
+    "url": "#carrera-cs"
+  },
+  {
+    "id": "carrera-le",
+    "name": "Profesorado en Lengua y Literatura",
+    "degree": "Profesorado",
+    "duration": "4 años",
+    "modality": "Presencial",
+    "shift": ["noche"],
+    "summary": "Carrera orientada a la formación docente en prácticas de lectura, escritura y análisis literario.",
+    "requirements": "Título secundario completo y curso introductorio",
+    "details": "Ofrece espacios de didáctica, lingüística, literatura argentina y prácticas de residencia.",
+    "url": "#carrera-le"
+  },
+  {
+    "id": "carrera-bio",
+    "name": "Licenciatura en Biotecnología",
+    "degree": "Licenciatura",
+    "duration": "5 años",
+    "modality": "Presencial",
+    "shift": ["mañana"],
+    "summary": "Formación interdisciplinaria en microbiología, biología molecular y aplicaciones productivas.",
+    "requirements": "Aprobación del curso de ingreso en ciencias básicas",
+    "details": "Incluye laboratorios, estadística, genética y proyectos aplicados al ambiente y la salud.",
+    "url": "#carrera-bio"
+  },
+  {
+    "id": "carrera-tur",
+    "name": "Tecnicatura en Turismo Sostenible",
+    "degree": "Tecnicatura",
+    "duration": "3 años",
+    "modality": "Híbrida",
+    "shift": ["noche"],
+    "summary": "Propuesta orientada a la gestión turística con enfoque territorial, patrimonial y ambiental.",
+    "requirements": "Inscripción en línea y entrega de título secundario",
+    "details": "Aborda planificación de circuitos, desarrollo local, interpretación del patrimonio y atención al visitante.",
+    "url": "#carrera-tur"
+  },
+  {
+    "id": "carrera-datos",
+    "name": "Tecnicatura en Ciencia de Datos",
+    "degree": "Tecnicatura",
+    "duration": "3 años",
+    "modality": "Híbrida",
+    "shift": ["mañana", "noche"],
+    "summary": "Carrera orientada al análisis de datos, visualización, estadística aplicada y programación.",
+    "requirements": "Curso nivelatorio en matemática y lógica",
+    "details": "Incluye bases de datos, aprendizaje automático introductorio y comunicación de resultados.",
+    "url": "#carrera-datos"
   }
 ]

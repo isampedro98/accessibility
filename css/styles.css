@@ -79,6 +79,33 @@ label {
   align-items: center;
 }
 
+.info-block ul {
+  margin: 0 0 12px;
+  padding-left: 20px;
+}
+
+.news-archive {
+  display: grid;
+  gap: 20px;
+}
+
+.news-article {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.news-article:last-child {
+  border-bottom: 0;
+}
+
+.news-article:target {
+  scroll-margin-top: 24px;
+}
+
+.news-summary {
+  font-weight: bold;
+}
+
 .honeypot-field {
   position: absolute;
   left: -9999px;

@@ -2,17 +2,79 @@
   {
     "id": "noticia-001",
     "title": "Actualización del sistema de evaluación",
-    "summary": "Se aplicarán cambios en las evaluaciones del semestre para mejorar la organización académica.",
+    "summary": "Se aplicarán cambios en las evaluaciones del semestre para mejorar la organización académica y la devolución a estudiantes.",
+    "content": [
+      "La Secretaría Académica informó que, a partir del segundo cuatrimestre, se incorporarán nuevos criterios de seguimiento para trabajos prácticos, parciales y recuperatorios.",
+      "La medida busca ordenar calendarios, unificar pautas entre cátedras y mejorar la devolución pedagógica en cada instancia de evaluación.",
+      "Durante las próximas semanas se publicará una guía ampliada con fechas, escalas de calificación y modalidades previstas para cada asignatura."
+    ],
     "date": "2026-03-15",
     "category": "Académica",
-    "url": "novedades/evaluacion-2026.html"
+    "url": "novedades.html#noticia-001"
   },
   {
     "id": "noticia-002",
     "title": "Convocatoria a becas de investigación",
-    "summary": "Se abre una nueva convocatoria para estudiantes avanzados y graduados recientes.",
+    "summary": "Se abre una nueva convocatoria para estudiantes avanzados y graduados recientes con proyectos en curso.",
+    "content": [
+      "La convocatoria 2026 de becas de investigación estará abierta para estudiantes avanzados, tesistas y graduados recientes con interés en integrarse a proyectos vigentes.",
+      "Las becas contemplan acompañamiento docente, dedicación parcial y participación en actividades de formación metodológica.",
+      "La postulación se realizará en línea y deberá incluir antecedentes académicos, carta de motivación y propuesta breve de trabajo."
+    ],
     "date": "2026-03-10",
     "category": "Investigación",
-    "url": "novedades/becas-investigacion-2026.html"
+    "url": "novedades.html#noticia-002"
+  },
+  {
+    "id": "noticia-003",
+    "title": "Apertura de inscripciones al segundo cuatrimestre",
+    "summary": "La Secretaría Académica publicó el cronograma de inscripción a materias, equivalencias y solicitudes especiales.",
+    "content": [
+      "El sistema de inscripciones al segundo cuatrimestre quedará habilitado a partir del 4 de abril para estudiantes regulares y reinscriptos.",
+      "Además de la selección de materias, se podrán registrar solicitudes de equivalencias, cambios de comisión y pedidos de excepción por superposición horaria.",
+      "Se recomienda verificar correlatividades y documentación pendiente antes del cierre del período administrativo."
+    ],
+    "date": "2026-03-22",
+    "category": "Estudiantes",
+    "url": "novedades.html#noticia-003"
+  },
+  {
+    "id": "noticia-004",
+    "title": "Nueva agenda de talleres de extensión universitaria",
+    "summary": "Se incorporan propuestas de formación breve en alfabetización digital, ciudadanía y producción audiovisual.",
+    "content": [
+      "La universidad presentó una nueva agenda de talleres abiertos a la comunidad con foco en extensión, participación territorial y formación continua.",
+      "Las propuestas abarcan alfabetización digital, producción audiovisual comunitaria, herramientas para organizaciones sociales y derechos ciudadanos.",
+      "La inscripción será gratuita, con cupos limitados y certificación de participación para quienes completen la cursada."
+    ],
+    "date": "2026-03-19",
+    "category": "Extensión",
+    "url": "novedades.html#noticia-004"
+  },
+  {
+    "id": "noticia-005",
+    "title": "Jornadas de orientación para ingresantes 2026",
+    "summary": "Las jornadas incluirán recorridos guiados, charlas sobre vida universitaria y espacios de consulta con docentes y tutores.",
+    "content": [
+      "Las jornadas de orientación para ingresantes se desarrollarán durante la primera semana de clases con actividades presenciales y recursos de apoyo en línea.",
+      "Habrá recorridos por las sedes, encuentros con equipos docentes, presentación de servicios institucionales y espacios de consulta con tutorías.",
+      "El objetivo es facilitar la integración a la vida universitaria y acompañar las primeras decisiones académicas del estudiantado."
+    ],
+    "date": "2026-03-27",
+    "category": "Ingreso",
+    "url": "novedades.html#noticia-005"
+  },
+  {
+    "id": "noticia-006",
+    "title": "Actualización de horarios en biblioteca y salas de estudio",
+    "summary": "Se amplían las franjas de atención para acompañar el inicio del ciclo lectivo y las semanas de parciales.",
+    "content": [
+      "La biblioteca central y las salas de estudio extenderán sus horarios durante abril y mayo para acompañar el inicio del ciclo lectivo.",
+      "La ampliación incluye apertura temprana, mayor disponibilidad vespertina y reserva de espacios para trabajo grupal.",
+      "También se incorporarán guardias de consulta para préstamo bibliográfico, acceso a recursos digitales y orientación de búsqueda."
+    ],
+    "date": "2026-03-25",
+    "category": "Servicios",
+    "url": "novedades.html#noticia-006"
   }
 ]

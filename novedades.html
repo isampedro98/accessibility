@@ -23,15 +23,10 @@
       <section style="padding: 20px;" aria-labelledby="novedades-titulo">
         <h1 id="novedades-titulo">Portal de Noticias Institucionales</h1>
 
-        <article aria-labelledby="novedad-destacada">
-          <h2 id="novedad-destacada">Actualización del sistema de evaluación</h2>
-
-          <p style="text-align: justify;">
-            Informamos a los estudiantes que habrá cambios en las evaluaciones de este semestre.
-            Estos cambios buscan mejorar la organización del proceso de evaluación.
-            Próximamente se publicará información más detallada sobre las nuevas modalidades.
-          </p>
-        </article>
+        <section aria-labelledby="archivo-novedades">
+          <h2 id="archivo-novedades">Archivo de novedades institucionales</h2>
+          <div id="news-archive" class="news-archive" aria-live="polite"></div>
+        </section>
 
         <section style="margin-top: 20px;" aria-labelledby="mensaje-rectorado">
           <h2 id="mensaje-rectorado">Mensaje del Rectorado</h2>
@@ -45,6 +40,7 @@
     </main>
     <div data-include="site-footer"></div>
     <script src="js/load-partials.js"></script>
+    <script type="module" src="js/render-news.js"></script>
   </body>
 
 </html>

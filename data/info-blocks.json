@@ -2,7 +2,13 @@
   {
     "id": "info-001",
     "title": "Calendario académico",
-    "text": "Consulta fechas de inscripción, cursada y exámenes del ciclo lectivo.",
+    "text": "Consultá las próximas fechas clave del ciclo lectivo para organizar cursada, exámenes y trámites.",
+    "highlights": [
+      "31 de marzo: cierre de inscripción a materias anuales.",
+      "5 de abril: inicio de tutorías para ingresantes.",
+      "12 de abril: último día para solicitar equivalencias.",
+      "18 de abril: publicación de comisiones y aulas definitivas."
+    ],
     "url": "mapa.html",
     "linkLabel": "Consultar información del sitio"
   },
@@ -12,5 +18,12 @@
     "text": "Accedé a trámites, consultas y servicios de autogestión estudiantil.",
     "url": "estudiantes.html",
     "linkLabel": "Ir al portal de estudiantes"
+  },
+  {
+    "id": "info-003",
+    "title": "Vida universitaria",
+    "text": "Conocé actividades culturales, becas de apoyo, orientación estudiantil y espacios de participación.",
+    "url": "novedades.html",
+    "linkLabel": "Ver actividades y novedades"
   }
 ]

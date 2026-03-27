@@ -9,7 +9,7 @@ function renderNewsItem(item) {
     title.id = `news-title-${item.id}`;
 
     const link = document.createElement("a");
-    link.href = item.url;
+    link.href = item.url || `novedades.html#${item.id}`;
     link.textContent = item.title;
     title.append(link);
 
@@ -36,11 +36,25 @@ function renderInfoBlock(item) {
     const text = document.createElement("p");
     text.textContent = item.text;
 
+    section.append(title, text);
+
+    if (Array.isArray(item.highlights) && item.highlights.length > 0) {
+        const list = document.createElement("ul");
+
+        item.highlights.forEach((highlight) => {
+            const listItem = document.createElement("li");
+            listItem.textContent = highlight;
+            list.append(listItem);
+        });
+
+        section.append(list);
+    }
+
     const link = document.createElement("a");
     link.href = item.url;
     link.textContent = item.linkLabel;
 
-    section.append(title, text, link);
+    section.append(link);
     return section;
 }
 
@@ -61,7 +75,11 @@ async function initHome() {
         loadJson("./data/info-blocks.json")
     ]);
 
-    newsList.replaceChildren(...news.map(renderNewsItem));
+    const latestNews = [...news]
+        .sort((a, b) => new Date(b.date) - new Date(a.date))
+        .slice(0, 3);
+
+    newsList.replaceChildren(...latestNews.map(renderNewsItem));
     secondaryInfo.replaceChildren(...infoBlocks.map(renderInfoBlock));
 }
 
