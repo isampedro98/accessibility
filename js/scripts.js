@@ -19,6 +19,14 @@ function simularLogin(event) {
 
     const errorContainer = document.getElementById('form-error');
     const userField = document.getElementById('user');
+    const honeypotField = document.getElementById('website');
+
+    if (honeypotField && honeypotField.value.trim() !== '') {
+        if (errorContainer) {
+            errorContainer.innerHTML = "<span class='error-text'>No fue posible procesar la solicitud.</span>";
+        }
+        return;
+    }
 
     if (errorContainer) {
         errorContainer.innerHTML = "<span class='error-text'>Los campos obligatorios deben completarse antes de continuar.</span>";
