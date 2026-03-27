@@ -13,26 +13,38 @@
   <body>
     <div data-include="site-header"></div>
     <main id="main">
-      <div style="padding: 30px;">
-        <h3>Ingreso al Sistema Siu-Guarani Universitario v9.8.2</h3>
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="index.html">Inicio</a></li>
+          <li aria-current="page">Portal de estudiantes</li>
+        </ol>
+      </nav>
+
+      <section style="padding: 30px;" aria-labelledby="portal-estudiantes-titulo">
+        <h1 id="portal-estudiantes-titulo">Portal de estudiantes</h1>
+        <h2>Ingreso al Sistema Siu-Guarani Universitario v9.8.2</h2>
 
         <form onsubmit="simularLogin(event)">
-          <div id="form-error"></div>
-          <br>
-          <input type="text" id="user" placeholder="Matricula Universitaria">
-          <br><br>
-          <input type="password" id="pass" placeholder="Clave Alfanumerica">
-          <br><br>
+          <p id="form-error"></p>
+          <fieldset>
+            <legend>Datos de acceso</legend>
+            <p id="login-help">Complete su matricula universitaria y su clave alfanumerica para ingresar.</p>
 
-          <div style="display: flex; align-items: center;">
-            <div class="fake-checkbox"></div>
-            <span style="margin-left: 5px; font-size: 10px;">Recordar sesion en este equipo</span>
-          </div>
+            <label for="user">Matricula universitaria</label>
+            <input type="text" id="user" name="user" autocomplete="username" aria-describedby="login-help">
 
-          <br><br>
+            <label for="pass">Clave alfanumerica</label>
+            <input type="password" id="pass" name="pass" autocomplete="current-password">
+
+            <label>
+              <input type="checkbox" id="remember-session" name="remember-session">
+              Recordar sesion en este equipo
+            </label>
+          </fieldset>
+
           <button class="btn" type="submit">Ingresar</button>
         </form>
-      </div>
+      </section>
     </main>
     <div data-include="site-footer"></div>
     <script src="js/load-partials.js"></script>

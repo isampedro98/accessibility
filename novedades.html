@@ -13,25 +13,35 @@
   <body>
     <div data-include="site-header"></div>
     <main id="main">
-      <div style="padding: 20px;">
-        <h1>Portal de Noticias Institucionales</h1>
-        <h4>Actualizacion del sistema de evaluacion</h4>
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="index.html">Inicio</a></li>
+          <li aria-current="page">Novedades</li>
+        </ol>
+      </nav>
 
-        <p style="text-align: justify;">
-          Informamos a los estudiantes que habra cambios en las evaluaciones de este semestre.
-          Estos cambios buscan mejorar la organizacion del proceso de evaluacion.
-          Proximamente se publicara informacion mas detallada sobre las nuevas modalidades.
-        </p>
+      <section style="padding: 20px;" aria-labelledby="novedades-titulo">
+        <h1 id="novedades-titulo">Portal de Noticias Institucionales</h1>
 
-        <div style="margin-top: 20px;">
-          <span style="font-weight: bold;">Mensaje del Rectorado:</span><br>
+        <article aria-labelledby="novedad-destacada">
+          <h2 id="novedad-destacada">Actualizacion del sistema de evaluacion</h2>
+
+          <p style="text-align: justify;">
+            Informamos a los estudiantes que habra cambios en las evaluaciones de este semestre.
+            Estos cambios buscan mejorar la organizacion del proceso de evaluacion.
+            Proximamente se publicara informacion mas detallada sobre las nuevas modalidades.
+          </p>
+        </article>
+
+        <section style="margin-top: 20px;" aria-labelledby="mensaje-rectorado">
+          <h2 id="mensaje-rectorado">Mensaje del Rectorado</h2>
           <video controls preload="metadata">
             <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
             <track kind="subtitles" src="media/subtitulos.vtt" srclang="es" label="Espanol">
             Tu navegador no soporta el elemento de video.
           </video>
-        </div>
-      </div>
+        </section>
+      </section>
     </main>
     <div data-include="site-footer"></div>
     <script src="js/load-partials.js"></script>

@@ -1,15 +1,15 @@
 /* ESTILOS INACCESIBLES */
 * {
-  /* ¡Grave error! Elimina el indicador visual para navegación por teclado */
-  outline: none !important; 
+  /* Grave error. Elimina el indicador visual para navegacion por teclado. */
+  outline: none !important;
 }
 
 body {
-  font-family: "Times New Roman", Times, serif; /* Tipografía poco amigable para dislexia */
-  font-size: 12px; /* Muy pequeño */
-  color: #999999; /* Contraste bajísimo contra fondo blanco */
+  font-family: "Times New Roman", Times, serif;
+  font-size: 12px;
+  color: #999999;
   background-color: #f4f4f4;
-  line-height: 1.1; /* Párrafos apretados, difícil lectura */
+  line-height: 1.1;
 }
 
 img,
@@ -47,12 +47,16 @@ video {
   margin-bottom: 24px;
 }
 
+fieldset {
+  margin: 0 0 16px;
+}
+
 #career-filters fieldset {
   border: 1px solid #bbb;
   padding: 12px;
 }
 
-#career-filters label {
+label {
   display: block;
   margin-bottom: 8px;
 }
@@ -64,20 +68,31 @@ video {
 
 .helper-text,
 .career-meta,
-.empty-state {
+.empty-state,
+.error-text {
   margin-bottom: 12px;
 }
 
-/* Botones genéricos */
+.search-inline {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+button {
+  font: inherit;
+}
+
+/* Botones genericos */
 .btn {
   background-color: #4CAF50;
-  color: #4CAF50; /* Texto del mismo color que el fondo casi */
+  color: #4CAF50;
   border: none;
   padding: 5px 10px;
   cursor: pointer;
 }
 
-/* Modal Inaccesible */
+/* Modal inaccesible */
 #promoModal {
   display: none;
   position: fixed;
@@ -88,34 +103,29 @@ video {
   border: 1px solid #ccc;
   padding: 20px;
   z-index: 1000;
-  /* Sin shadow DOM, ni backdrop que impida interactuar con el fondo */
+  /* Pendiente de una fase posterior: backdrop, foco y cierre por teclado. */
 }
 
-/* Formulario Inaccesible */
-input[type="text"], input[type="password"] {
+/* Formularios con problemas visuales que se corrigen en fases posteriores */
+input[type="text"],
+input[type="password"],
+input[type="search"] {
   border: 1px solid #ccc;
   padding: 5px;
-  color: #ccc; /* Texto introducido casi invisible */
+  color: #ccc;
 }
 
 .error-text {
-  color: red; /* Error indicado SOLO por color, malo para daltonismo */
-}
-
-.fake-checkbox {
-  width: 15px;
-  height: 15px;
-  background: #eee;
-  border: 1px solid #999;
-  display: inline-block;
-  /* No es enfocable, no tiene rol */
-}
-.fake-checkbox.checked {
-  background: blue; /* Solo color, sin tilde visible */
+  color: red;
 }
 
 @media (max-width: 768px) {
   .content-grid {
     grid-template-columns: 1fr;
+  }
+
+  .search-inline {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
