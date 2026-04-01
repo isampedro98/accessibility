@@ -35,6 +35,12 @@
 }
 
 .navbar > a,
+.subnav {
+  display: flex;
+  align-items: stretch;
+}
+
+.navbar > a,
 .subnav .subnavbtn {
   display: inline-flex;
   align-items: center;
@@ -45,10 +51,18 @@
   background-color: transparent;
   color: var(--color-text-default);
   font-size: 16px;
+  line-height: 1.2;
   text-align: center;
   text-decoration: none;
   font-family: inherit;
   cursor: pointer;
+}
+
+.subnav .subnavbtn {
+  appearance: none;
+  -webkit-appearance: none;
+  border-radius: 0;
+  height: 100%;
 }
 
 .navbar > a:hover,
@@ -218,4 +232,3 @@
   margin-left: 6px;
   font-size: 0.85em;
 }
-
