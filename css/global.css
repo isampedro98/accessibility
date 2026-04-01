@@ -1,10 +1,37 @@
+@font-face {
+  font-family: "OpenDyslexic";
+  src: url("../fonts/OpenDyslexic-Regular.otf") format("opentype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "OpenDyslexic";
+  src: url("../fonts/OpenDyslexic-Italic.otf") format("opentype");
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "OpenDyslexic";
+  src: url("../fonts/OpenDyslexic-Bold.otf") format("opentype");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "OpenDyslexic";
+  src: url("../fonts/OpenDyslexic-BoldItalic.otf") format("opentype");
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+}
+
 :root,
 html[data-color-theme="contrastes"] {
-  --font-family-base: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-family-heading: var(--font-family-base);
-  --font-size-base: 16px;
-  --line-height-base: 1.5;
-  --letter-spacing-base: 0.01em;
   --color-brand-strong: #2546F0;
   --color-brand-highlight: #5928ED;
   --color-brand-focus: #2546F0;
@@ -29,11 +56,6 @@ html[data-color-theme="contrastes"] {
 }
 
 html[data-color-theme="siu-guarani"] {
-  --font-family-base: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-family-heading: var(--font-family-base);
-  --font-size-base: 16px;
-  --line-height-base: 1.5;
-  --letter-spacing-base: 0.01em;
   --color-brand-strong: #005A8D;
   --color-brand-highlight: #1D4ED8;
   --color-brand-focus: #0B5FFF;
@@ -55,6 +77,23 @@ html[data-color-theme="siu-guarani"] {
   --color-error: #B91C1C;
   --color-focus-ring: #0B5FFF;
   --shadow-soft: 0 8px 24px rgba(15, 23, 42, 0.08);
+}
+
+:root,
+html[data-font-theme="open-dyslexic"] {
+  --font-family-base: "OpenDyslexic", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-family-heading: var(--font-family-base);
+  --font-size-base: 16px;
+  --line-height-base: 1.55;
+  --letter-spacing-base: 0.02em;
+}
+
+html[data-font-theme="helvetica"] {
+  --font-family-base: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-family-heading: var(--font-family-base);
+  --font-size-base: 16px;
+  --line-height-base: 1.5;
+  --letter-spacing-base: 0.01em;
 }
 
 body {

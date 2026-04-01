@@ -11,6 +11,9 @@
   position: static;
   width: auto;
   height: auto;
+  padding: 8px 12px;
+  background-color: var(--color-bg-surface);
+  color: var(--color-text-strong);
 }
 
 .site-header {
