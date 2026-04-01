@@ -7,6 +7,53 @@ body {
   letter-spacing: var(--letter-spacing-base);
 }
 
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 20px 40px;
+}
+
+main > nav.breadcrumb {
+  margin-bottom: 0;
+}
+
+main > :is(section, aside, .content-grid, .support-panel, .page-intro):not(#promoModal),
+main > section > section {
+  position: relative;
+}
+
+main > nav.breadcrumb + :is(section, aside, .content-grid, .support-panel, .page-intro):not(#promoModal),
+main > :is(section, aside, .content-grid, .support-panel, .page-intro):not(#promoModal) + :is(section, aside, .content-grid, .support-panel, .page-intro):not(#promoModal) {
+  margin-top: 32px;
+  padding-top: 28px;
+  border-top: 2px solid var(--color-border-subtle);
+}
+
+main > section > section + section {
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 2px solid var(--color-border-subtle);
+}
+
+.page-section {
+  padding: 20px 0;
+}
+
+.page-section--spacious {
+  padding: 30px 0;
+}
+
+.page-section > :first-child {
+  margin-top: 0;
+}
+
+hr,
+.section-divider {
+  border: 0;
+  border-top: 2px solid var(--color-border-strong);
+  margin: 32px 0;
+}
+
 img,
 video {
   max-width: 100%;
@@ -155,6 +202,15 @@ input[type="search"] {
 }
 
 @media (max-width: 768px) {
+  main {
+    padding: 20px 16px 32px;
+  }
+
+  .page-section,
+  .page-section--spacious {
+    padding: 20px 0;
+  }
+
   .content-grid {
     grid-template-columns: 1fr;
   }
