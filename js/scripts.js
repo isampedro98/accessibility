@@ -142,6 +142,7 @@ function initLoginForm() {
     const passwordField = document.getElementById("pass");
     const honeypotField = document.getElementById("website");
     const rememberSessionField = document.getElementById("remember-session");
+    const submitButton = loginForm.querySelector('button[type="submit"]');
 
     function clearLoginFeedback() {
         if (errorContainer) {
@@ -188,15 +189,6 @@ function initLoginForm() {
         }
     }
 
-    function showLoginSuccess(username) {
-        clearLoginFeedback();
-
-        if (errorContainer) {
-            errorContainer.textContent = `Sesión iniciada como ${username}.`;
-            errorContainer.setAttribute("role", "status");
-        }
-    }
-
     function persistUser(username) {
         if (rememberSessionField?.checked) {
             localStorage.setItem(AUTH_STORAGE_KEY, username);
@@ -211,7 +203,7 @@ function initLoginForm() {
         }));
     }
 
-    loginForm.addEventListener("submit", (event) => {
+    function handleLoginSubmit(event) {
         event.preventDefault();
 
         const username = userField?.value.trim() || "";
@@ -224,12 +216,18 @@ function initLoginForm() {
 
         if (username !== "" && password !== "") {
             persistUser(username);
-            showLoginSuccess(username);
+            window.location.assign("index.html");
             return;
         }
 
         showLoginError("Los campos obligatorios deben completarse antes de continuar.");
-    });
+    }
+
+    loginForm.addEventListener("submit", handleLoginSubmit);
+
+    if (submitButton) {
+        submitButton.addEventListener("click", handleLoginSubmit);
+    }
 
     if (userField) {
         userField.addEventListener("input", clearLoginFeedback);

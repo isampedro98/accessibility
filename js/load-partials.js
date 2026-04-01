@@ -114,10 +114,12 @@ function renderUserStatus(root) {
     if (!currentUser) {
         userStatus.hidden = true;
         userLabel.textContent = "";
+        userStatus.setAttribute("aria-label", "Usuario no autenticado");
         return;
     }
 
     userLabel.textContent = currentUser;
+    userStatus.setAttribute("aria-label", `Usuario autenticado: ${currentUser}`);
     userStatus.hidden = false;
 }
 
