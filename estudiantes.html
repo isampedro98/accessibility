@@ -27,16 +27,17 @@
         <h2>Ingreso al Sistema Siu-Guarani Universitario v9.8.2</h2>
 
         <form id="login-form">
+          <p class="helper-text">Los campos obligatorios se marcan con <span class="required-indicator" aria-hidden="true">*</span>.</p>
           <p id="form-error"></p>
           <fieldset>
             <legend>Datos de acceso</legend>
             <p id="login-help">Complete su matr&iacute;cula universitaria y su clave alfanum&eacute;rica para ingresar.</p>
 
-            <label for="user">Matr&iacute;cula universitaria</label>
-            <input type="text" id="user" name="user" autocomplete="username" aria-describedby="login-help">
+            <label for="user">Matr&iacute;cula universitaria <span class="required-indicator" aria-hidden="true">*</span></label>
+            <input type="text" id="user" name="user" autocomplete="username" aria-describedby="login-help" required>
 
-            <label for="pass">Clave alfanum&eacute;rica</label>
-            <input type="password" id="pass" name="pass" autocomplete="current-password">
+            <label for="pass">Clave alfanum&eacute;rica <span class="required-indicator" aria-hidden="true">*</span></label>
+            <input type="password" id="pass" name="pass" autocomplete="current-password" required>
 
             <label>
               <input type="checkbox" id="remember-session" name="remember-session">
@@ -59,4 +60,6 @@
   </body>
 
 </html>
+
+
 

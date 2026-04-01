@@ -149,16 +149,49 @@
   box-shadow: inset 0 -5px 0 var(--color-brand-strong);
 }
 
-.navbar-controls {
+.navbar-user {
   margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 52px;
+  padding: 8px 14px;
+  color: var(--color-text-strong);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.navbar-user[hidden] {
+  display: none;
+}
+
+.site-footer {
+  margin-top: 32px;
+  padding: 20px 16px;
+  background-color: var(--color-bg-nav);
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+.site-footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.site-footer__content {
+  min-width: 220px;
+}
+
+.site-footer-controls {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 12px;
-  padding: 8px 12px;
 }
 
-.navbar-control {
+.site-footer-control {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -166,11 +199,11 @@
   font-size: 14px;
 }
 
-.navbar-control span {
+.site-footer-control span {
   font-weight: 700;
 }
 
-.navbar-control select {
+.site-footer-control select {
   min-height: 38px;
   padding: 6px 10px;
   border: 1px solid var(--color-border-strong);
@@ -184,18 +217,11 @@
 .navbar-brand:focus-visible,
 .subnav .subnavbtn:focus-visible,
 .subnav-content a:focus-visible,
-.navbar-control select:focus-visible,
+.site-footer-control select:focus-visible,
 .footer-nav a:focus-visible,
 .site-footer-contact a:focus-visible {
   outline: 3px solid var(--color-focus-ring);
   outline-offset: 2px;
-}
-
-.site-footer {
-  margin-top: 32px;
-  padding: 20px 16px;
-  background-color: var(--color-bg-nav);
-  border-top: 1px solid var(--color-border-subtle);
 }
 
 .site-footer-title {
@@ -226,10 +252,10 @@
     align-items: flex-start;
   }
 
-  .navbar-controls {
+  .navbar-user {
     width: 100%;
     margin-left: 0;
-    padding-top: 0;
+    padding-top: 12px;
     border-top: 1px solid var(--color-border-subtle);
   }
 }
@@ -238,7 +264,8 @@
   .navbar-brand,
   .navbar > a:not(.navbar-brand),
   .subnav,
-  .subnav .subnavbtn {
+  .subnav .subnavbtn,
+  .navbar-user {
     width: 100%;
     justify-content: flex-start;
   }
@@ -251,17 +278,17 @@
     border-right: 0;
   }
 
-  .navbar-controls,
-  .navbar-control {
+  .site-footer-controls,
+  .site-footer-control {
     width: 100%;
   }
 
-  .navbar-control {
+  .site-footer-control {
     align-items: flex-start;
     flex-direction: column;
   }
 
-  .navbar-control select {
+  .site-footer-control select {
     width: 100%;
   }
 }

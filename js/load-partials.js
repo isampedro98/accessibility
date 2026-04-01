@@ -2,6 +2,7 @@ const DEFAULT_COLOR_THEME = "contrastes";
 const DEFAULT_FONT_THEME = "open-dyslexic";
 const COLOR_THEME_KEY = "color-theme";
 const FONT_THEME_KEY = "font-theme";
+const AUTH_STORAGE_KEY = "siu-auth-user";
 
 function getCurrentPage() {
     const path = window.location.pathname.split("/").pop();
@@ -96,6 +97,30 @@ function setupThemeControls(root) {
     }
 }
 
+function getStoredUser() {
+    return localStorage.getItem(AUTH_STORAGE_KEY) || sessionStorage.getItem(AUTH_STORAGE_KEY) || "";
+}
+
+function renderUserStatus(root) {
+    const userStatus = root.querySelector("#navbar-user-status");
+    const userLabel = root.querySelector("#navbar-user-label");
+
+    if (!userStatus || !userLabel) {
+        return;
+    }
+
+    const currentUser = getStoredUser();
+
+    if (!currentUser) {
+        userStatus.hidden = true;
+        userLabel.textContent = "";
+        return;
+    }
+
+    userLabel.textContent = currentUser;
+    userStatus.hidden = false;
+}
+
 async function loadPartial(includeName, path, setup = null) {
     const placeholder = document.querySelector(`[data-include="${includeName}"]`);
 
@@ -122,10 +147,19 @@ Promise.all([
     loadPartial("site-header", "./partials/site-header.html", (placeholder) => {
         setActiveNavItem(placeholder);
         setupSubnav(placeholder);
-        setupThemeControls(placeholder);
+        renderUserStatus(placeholder);
     }),
-    loadPartial("site-footer", "./partials/site-footer.html")
+    loadPartial("site-footer", "./partials/site-footer.html", (placeholder) => {
+        setupThemeControls(placeholder);
+    })
 ]).catch((error) => {
     console.error(error);
 });
 
+window.addEventListener("siu-auth-change", () => {
+    const headerPlaceholder = document.querySelector('[data-include="site-header"]');
+
+    if (headerPlaceholder) {
+        renderUserStatus(headerPlaceholder);
+    }
+});

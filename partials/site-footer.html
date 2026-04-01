@@ -1,7 +1,29 @@
 <footer class="site-footer">
-  <p class="site-footer-title">Universidad</p>
-  <address class="site-footer-contact">
-    Mesa de ayuda:
-    <a href="mailto:contacto@universidad.edu">contacto@universidad.edu</a>
-  </address>
+  <div class="site-footer__inner">
+    <div class="site-footer__content">
+      <p class="site-footer-title">Universidad</p>
+      <address class="site-footer-contact">
+        Mesa de ayuda:
+        <a href="mailto:contacto@universidad.edu">contacto@universidad.edu</a>
+      </address>
+    </div>
+
+    <div class="site-footer-controls" aria-label="Preferencias de visualizacion">
+      <label class="site-footer-control" for="color-theme-select">
+        <span>Colores</span>
+        <select id="color-theme-select" name="color-theme">
+          <option value="contrastes">Contrastes</option>
+          <option value="siu-guarani">SIU Guarani</option>
+        </select>
+      </label>
+
+      <label class="site-footer-control" for="font-theme-select">
+        <span>Tipograf&iacute;a</span>
+        <select id="font-theme-select" name="font-theme">
+          <option value="open-dyslexic">OpenDyslexic</option>
+          <option value="helvetica">Helvetica</option>
+        </select>
+      </label>
+    </div>
+  </div>
 </footer>

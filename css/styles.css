@@ -140,6 +140,11 @@ label {
   margin-bottom: 12px;
 }
 
+.required-indicator {
+  color: var(--color-error);
+  font-weight: 700;
+}
+
 .search-inline {
   display: flex;
   gap: 8px;
