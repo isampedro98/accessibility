@@ -19,7 +19,7 @@ function applyStoredPreferences() {
 
 function setActiveNavItem(root) {
     const currentPage = getCurrentPage();
-    const currentLink = root.querySelector(`[data-nav-link="${currentPage}"]`);
+    const currentLink = root.querySelector(`[data-nav-link="${currentPage}"]:not(.navbar-brand)`);
 
     if (!currentLink) {
         return;
@@ -128,3 +128,4 @@ Promise.all([
 ]).catch((error) => {
     console.error(error);
 });
+
