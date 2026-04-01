@@ -96,7 +96,6 @@
 
 .navbar-brand:hover,
 .navbar-brand:focus-visible,
-.navbar-user:focus-visible,
 .navbar > a:not(.navbar-brand):hover,
 .navbar > a:not(.navbar-brand):focus-visible,
 .subnav:hover .subnavbtn,
@@ -157,13 +156,9 @@
   gap: 8px;
   min-height: 52px;
   padding: 8px 14px;
-  border: 0;
-  background-color: transparent;
   color: var(--color-text-strong);
-  font: inherit;
   font-weight: 700;
   white-space: nowrap;
-  cursor: pointer;
 }
 
 .navbar-user[hidden] {
@@ -220,7 +215,6 @@
 
 .navbar a:focus-visible,
 .navbar-brand:focus-visible,
-.navbar-user:focus-visible,
 .subnav .subnavbtn:focus-visible,
 .subnav-content a:focus-visible,
 .site-footer-control select:focus-visible,
@@ -303,8 +297,3 @@
   margin-left: 6px;
   font-size: 0.85em;
 }
-
-
-
-
-
