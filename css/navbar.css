@@ -51,6 +51,7 @@
   text-decoration: none;
   font-weight: 700;
   background-color: transparent;
+  transition: background-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
 }
 
 .navbar-brand__logo {
@@ -83,6 +84,7 @@
   text-decoration: none;
   font-family: inherit;
   cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
 }
 
 .subnav .subnavbtn {
@@ -98,8 +100,9 @@
 .navbar > a:not(.navbar-brand):focus-visible,
 .subnav:hover .subnavbtn,
 .subnav .subnavbtn:focus-visible {
-  background-color: var(--color-bg-subnav-hover);
+  background-color: var(--color-accent-warm-soft);
   color: var(--color-text-strong);
+  box-shadow: inset 0 -4px 0 var(--color-brand-highlight);
 }
 
 .subnav {
@@ -123,12 +126,14 @@
   padding: 12px 16px;
   color: var(--color-text-default);
   text-decoration: none;
+  transition: background-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
 }
 
 .subnav-content a:hover,
 .subnav-content a:focus-visible {
-  background-color: var(--color-bg-subnav-hover);
+  background-color: var(--color-accent-warm-soft);
   color: var(--color-text-strong);
+  box-shadow: inset 4px 0 0 var(--color-brand-highlight);
 }
 
 .subnav:hover .subnav-content,
@@ -141,6 +146,7 @@
 .subnav.has-active .subnavbtn {
   background-color: var(--color-bg-nav-active);
   color: var(--color-text-strong);
+  box-shadow: inset 0 -5px 0 var(--color-brand-strong);
 }
 
 .navbar-controls {
