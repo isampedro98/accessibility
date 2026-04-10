@@ -133,6 +133,24 @@ label {
   gap: 16px;
 }
 
+.career-card {
+  overflow: hidden;
+}
+
+.career-card__image {
+  margin: 0 0 12px;
+}
+
+.career-card__image img {
+  display: block;
+  width: 100%;
+  max-width: 560px;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--color-border-subtle);
+}
+
 .helper-text,
 .career-meta,
 .empty-state,
