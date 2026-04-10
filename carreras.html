@@ -26,9 +26,9 @@
       </section>
 
       <div class="content-grid">
-        <section class="filters-panel">
-          <h2>Filtros de b&uacute;squeda</h2>
-          <form id="career-filters">
+        <section class="filters-panel" aria-labelledby="career-filters-title">
+          <h2 id="career-filters-title">Filtros de b&uacute;squeda</h2>
+          <form id="career-filters" aria-controls="careers-count careers-list" aria-describedby="careers-count">
             <fieldset>
               <legend>Turno</legend>
               <label>
@@ -43,15 +43,15 @@
           </form>
         </section>
 
-        <section class="career-results">
-          <h2>Listado de carreras</h2>
-          <p id="careers-count" class="helper-text"></p>
-          <div id="careers-list" class="career-list"></div>
+        <section class="career-results" aria-labelledby="career-results-title">
+          <h2 id="career-results-title">Listado de carreras</h2>
+          <p id="careers-count" class="helper-text" role="status" aria-live="polite" aria-atomic="true"></p>
+          <div id="careers-list" class="career-list" aria-live="polite" aria-busy="false" aria-describedby="careers-count"></div>
         </section>
       </div>
 
-      <aside class="support-panel">
-        <h2>Informaci&oacute;n complementaria</h2>
+      <aside class="support-panel" aria-labelledby="support-panel-title">
+        <h2 id="support-panel-title">Informaci&oacute;n complementaria</h2>
         <p>La secretar&iacute;a acad&eacute;mica brinda orientaci&oacute;n sobre inscripci&oacute;n, documentaci&oacute;n y fechas clave del ciclo lectivo.</p>
         <p><a href="mapa.html">Ver mapa del sitio y canales de ayuda</a></p>
       </aside>
@@ -63,4 +63,3 @@
     <script type="module" src="js/render-careers.js"></script>
   </body>
 </html>
-

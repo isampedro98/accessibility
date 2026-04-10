@@ -43,22 +43,62 @@
         }
 
         const button = subnav.querySelector(".subnavbtn");
+        const panel = subnav.querySelector(".subnav-content");
+        const firstLink = panel?.querySelector("a");
 
-        if (!button) {
+        if (!button || !panel) {
             return;
         }
 
         function closeSubnav() {
             subnav.classList.remove("open");
             button.setAttribute("aria-expanded", "false");
+            panel.hidden = true;
+        }
+
+        function openSubnav() {
+            subnav.classList.add("open");
+            button.setAttribute("aria-expanded", "true");
+            panel.hidden = false;
         }
 
         function toggleSubnav() {
-            const isOpen = subnav.classList.toggle("open");
-            button.setAttribute("aria-expanded", String(isOpen));
+            const isOpen = subnav.classList.contains("open");
+
+            if (isOpen) {
+                closeSubnav();
+                return;
+            }
+
+            openSubnav();
         }
 
+        closeSubnav();
+
         button.addEventListener("click", toggleSubnav);
+        button.addEventListener("keydown", (event) => {
+            if (event.key === "ArrowDown") {
+                event.preventDefault();
+                openSubnav();
+                firstLink?.focus();
+            }
+
+            if (event.key === "Escape") {
+                event.preventDefault();
+                closeSubnav();
+            }
+        });
+
+        panel.addEventListener("keydown", (event) => {
+            if (event.key === "Escape") {
+                event.preventDefault();
+                closeSubnav();
+                button.focus();
+            }
+        });
+
+        subnav.addEventListener("mouseenter", openSubnav);
+        subnav.addEventListener("mouseleave", closeSubnav);
 
         document.addEventListener("click", (event) => {
             if (!subnav.contains(event.target)) {
@@ -111,11 +151,13 @@
             userStatus.hidden = true;
             userLabel.textContent = "";
             userStatus.setAttribute("aria-label", "Usuario no autenticado");
+            userStatus.removeAttribute("title");
             return;
         }
 
         userLabel.textContent = currentUser;
         userStatus.setAttribute("aria-label", `Usuario autenticado: ${currentUser}`);
+        userStatus.setAttribute("title", `Sesion iniciada como ${currentUser}`);
         userStatus.hidden = false;
     }
 

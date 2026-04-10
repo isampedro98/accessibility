@@ -13,8 +13,10 @@ function renderCareerItem(item) {
     const article = document.createElement("article");
     article.id = item.id;
     article.className = "career-card";
+    article.setAttribute("aria-labelledby", `career-title-${item.id}`);
 
     const title = document.createElement("h3");
+    title.id = `career-title-${item.id}`;
     title.textContent = item.name;
 
     const meta = createParagraph(`${item.degree} | ${item.duration} | ${item.modality}`, "career-meta");
@@ -55,17 +57,23 @@ async function initCareers() {
     const careers = await loadJson("./data/carreras.json");
 
     function updateCareers() {
+        careersList.setAttribute("aria-busy", "true");
+
         const selectedShifts = getSelectedShifts(careerFilters);
         const filteredCareers = filterCareers(careers, selectedShifts);
 
         careersCount.textContent = `${filteredCareers.length} carrera(s) encontradas.`;
 
         if (filteredCareers.length === 0) {
-            careersList.replaceChildren(createParagraph("No hay carreras que coincidan con los filtros seleccionados.", "empty-state"));
+            const emptyState = createParagraph("No hay carreras que coincidan con los filtros seleccionados.", "empty-state");
+            emptyState.setAttribute("role", "status");
+            careersList.replaceChildren(emptyState);
+            careersList.setAttribute("aria-busy", "false");
             return;
         }
 
         careersList.replaceChildren(...filteredCareers.map(renderCareerItem));
+        careersList.setAttribute("aria-busy", "false");
     }
 
     careerFilters.addEventListener("change", updateCareers);

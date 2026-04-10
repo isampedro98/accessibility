@@ -138,7 +138,6 @@
   box-shadow: inset 4px 0 0 var(--color-brand-highlight);
 }
 
-.subnav:hover .subnav-content,
 .subnav.open .subnav-content {
   display: block;
 }
@@ -305,3 +304,6 @@
   margin-left: 6px;
   font-size: 0.85em;
 }
+
+
+

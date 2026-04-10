@@ -26,18 +26,18 @@
         <h1 id="portal-estudiantes-titulo">Portal de estudiantes</h1>
         <h2>Ingreso al Sistema Siu-Guarani Universitario v9.8.2</h2>
 
-        <form id="login-form" action="#" method="post" novalidate>
+        <form id="login-form" action="#" method="post" novalidate aria-describedby="login-help form-error">
           <p class="helper-text">Los campos obligatorios se marcan con <span class="required-indicator" aria-hidden="true">*</span>.</p>
-          <p id="form-error"></p>
+          <p id="form-error" role="alert" aria-live="assertive" aria-atomic="true" hidden></p>
           <fieldset>
             <legend>Datos de acceso</legend>
             <p id="login-help">Complete su matr&iacute;cula universitaria y su clave alfanum&eacute;rica para ingresar.</p>
 
             <label for="user">Matr&iacute;cula universitaria <span class="required-indicator" aria-hidden="true">*</span></label>
-            <input type="text" id="user" name="user" autocomplete="username" aria-describedby="login-help" required>
+            <input type="text" id="user" name="user" autocomplete="username" aria-describedby="login-help form-error" required>
 
             <label for="pass">Clave alfanum&eacute;rica <span class="required-indicator" aria-hidden="true">*</span></label>
-            <input type="password" id="pass" name="pass" autocomplete="current-password" required>
+            <input type="password" id="pass" name="pass" autocomplete="current-password" aria-describedby="login-help form-error" required>
 
             <label>
               <input type="checkbox" id="remember-session" name="remember-session">
@@ -61,7 +61,3 @@
   </body>
 
 </html>
-
-
-
-
