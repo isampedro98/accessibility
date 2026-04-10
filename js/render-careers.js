@@ -52,11 +52,7 @@ function renderCareerItem(item) {
     const requirements = createParagraph(`Ingreso: ${item.requirements}`);
     const details = createParagraph(item.details);
 
-    const link = document.createElement("a");
-    link.href = item.url;
-    link.textContent = `Enlace directo a ${item.name}`;
-
-    article.append(title, meta, summary, shifts, requirements, details, link);
+    article.append(title, meta, summary, shifts, requirements, details);
     return article;
 }
 
