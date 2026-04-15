@@ -1,60 +1,90 @@
-# Accessibility Refactor - University Portal
+# Refactor de accesibilidad - Portal SIU Guarani
 
-Static refactor of a university web portal with focus on accessibility improvements guided by WCAG 2.1 AA.
+Sitio web estatico desarrollado como prototipo academico para analizar, corregir y documentar barreras de accesibilidad en un portal universitario inspirado en SIU Guarani.
 
-The project is part of an academic assignment and keeps the stack intentionally simple:
-- HTML5 semantic markup
-- CSS
-- Vanilla JavaScript
-- JSON as content source
+El proyecto sigue una evolucion por fases y toma como referencia los principios de WCAG 2.1, especialmente nivel AA para contraste, foco visible, estructura semantica, navegacion consistente, formularios y contenido dinamico.
 
-## Goal
+## Objetivo
 
-The repository starts from an intentionally flawed website and evolves it in phases:
-- detect accessibility barriers
-- document findings and fixes
-- refactor structure, semantics, navigation, media, and forms
-- keep the code maintainable without unnecessary frameworks
+El repositorio parte de un sitio intencionalmente problematico y lo transforma progresivamente en una version mas accesible, mantenible y auditable.
 
-## Current Scope
+Los objetivos principales son:
 
-Implemented so far:
-- semantic reorganization of the home page
-- shared header and footer across views
-- contextual page titles
-- consistent breadcrumbs in secondary pages
-- normalized heading hierarchy
-- careers page refactored from layout table to semantic sections
-- rendering of news, careers, and secondary information from JSON
-- semantic cleanup of forms and native controls
-- basic honeypot on the student login form
+- identificar barreras de accesibilidad reales;
+- aplicar correcciones sobre HTML, CSS y JavaScript;
+- documentar decisiones tecnicas y visuales;
+- mantener trazabilidad entre hallazgos, cambios y commits;
+- evitar frameworks innecesarios cuando HTML, CSS y JavaScript nativo alcanzan.
 
-Detected and intentionally left for later phases:
-- visible focus styling across the full site
-- contrast, typography, spacing, and zoom behavior
-- full keyboard/focus handling in the modal
-- accessible error handling and richer form validation
-- CAPTCHA solutions requiring server-side verification
+## Tecnologias
 
-## Project Structure
+El stack se mantiene simple a proposito:
+
+- HTML5 semantico;
+- CSS con variables globales;
+- JavaScript vanilla;
+- JSON como fuente de contenido;
+- fuentes locales para OpenDyslexic;
+- parciales HTML compartidos para header y footer.
+
+No se usa build step, bundler ni framework frontend.
+
+## Estado Actual
+
+Cambios implementados hasta el momento:
+
+- estructura semantica en paginas principales;
+- encabezado y pie compartidos mediante parciales;
+- breadcrumbs consistentes en vistas secundarias;
+- titulos de pagina orientados a `SIU Guarani`;
+- favicon y logo en navbar como apoyo de orientacion cognitiva;
+- dos paletas accesibles seleccionables: `Contrastes` y `SIU Guarani`;
+- selector tipografico entre OpenDyslexic y Helvetica;
+- preferencias visuales persistidas en el navegador;
+- navbar con estado activo, foco visible y hover reforzado;
+- submenu `Facultad` operable por teclado y sincronizado con ARIA;
+- formulario de estudiantes con labels, campos obligatorios, mensajes de error y anuncio accesible;
+- sesion simulada mediante cookies;
+- boton de usuario en el navbar al iniciar sesion;
+- modal de aviso importante implementado como `alertdialog`;
+- listado de carreras renderizado desde JSON;
+- filtros de carreras por turno;
+- resultados dinamicos anunciados con `aria-live`;
+- imagenes representativas para carreras;
+- separadores visuales explicitos entre secciones y articulos;
+- noticias y bloques de informacion cargados desde JSON;
+- video con controles y subtitulos.
+
+## Estructura del Proyecto
 
 ```text
 .
 |-- css/
+|   |-- font-awesome.min.css
+|   |-- global.css
 |   |-- navbar.css
 |   `-- styles.css
 |-- data/
 |   |-- carreras.json
 |   |-- info-blocks.json
 |   `-- noticias.json
+|-- fonts/
+|   |-- OpenDyslexic-Bold.otf
+|   |-- OpenDyslexic-BoldItalic.otf
+|   |-- OpenDyslexic-Italic.otf
+|   `-- OpenDyslexic-Regular.otf
 |-- images/
 |-- js/
 |   |-- load-partials.js
+|   |-- portal-login.js
+|   |-- promo-modal.js
 |   |-- render-careers.js
 |   |-- render-home.js
 |   |-- render-loader.js
-|   `-- scripts.js
+|   |-- render-news.js
+|   `-- session.js
 |-- media/
+|   `-- subtitulos.vtt
 |-- partials/
 |   |-- site-footer.html
 |   `-- site-header.html
@@ -66,45 +96,75 @@ Detected and intentionally left for later phases:
 `-- README.md
 ```
 
-## Pages
+## Paginas
 
-- `index.html`: home page with institutional news and secondary info rendered from JSON
-- `carreras.html`: academic offer with semantic filters and careers loaded from JSON
-- `novedades.html`: institutional news and video content
-- `estudiantes.html`: student access form
-- `mapa.html`: site map and internal search prototype
+- `index.html`: portada con imagen institucional, aviso importante, noticias y bloques informativos.
+- `carreras.html`: oferta academica con filtros y listado renderizado desde `data/carreras.json`.
+- `novedades.html`: noticias institucionales y contenido multimedia.
+- `estudiantes.html`: acceso simulado al portal de estudiantes.
+- `mapa.html`: mapa del sitio y buscador interno.
 
-## How To Run
+## Como Ejecutar
 
-Do not open the HTML files directly with `file://`.
+No conviene abrir los archivos directamente con `file://`, porque el sitio usa `fetch()` para cargar:
 
-The site uses `fetch()` for:
-- shared partials
-- JSON content
+- parciales HTML;
+- archivos JSON;
+- contenido dinamico.
 
-Run it with a local server instead. For example:
+Ejecutar con un servidor local. Por ejemplo:
 
 ```bash
 python -m http.server 8000
 ```
 
-Then open:
+Luego abrir:
 
 ```text
 http://localhost:8000
 ```
 
-Any equivalent local server also works, such as VS Code Live Server.
+Tambien sirve cualquier servidor local equivalente, como Live Server de VS Code.
 
-## Accessibility Notes
+## Accesibilidad
 
-This repository mixes:
-- issues already fixed
-- issues still intentionally present for later phases of the assignment
+El trabajo se organiza alrededor de los principios WCAG:
 
-That is expected. The repo is not meant to represent a finished production website, but an audited and progressively improved prototype.
+- Perceptible: contraste, tipografia, subtitulos, textos alternativos y separadores visuales.
+- Operable: foco visible, navegacion por teclado, botones nativos y cierre de dialogos con teclado.
+- Comprensible: labels, instrucciones, estados de error y navegacion consistente.
+- Robusto: roles ARIA, estados sincronizados, regiones vivas y estructura HTML semantica.
 
-## Report
+Las mejoras no dependen solo del color. Cuando hay errores o cambios dinamicos, se agregan mensajes textuales y anuncios accesibles.
 
-The formal write-up and chapter-based documentation are maintained outside this repository in LaTeX/Overleaf.
+## Decisiones Visuales
 
+El sitio incluye dos temas de color:
+
+- `Contrastes`: tema por defecto, basado en una paleta con contrastes accesibles.
+- `SIU Guarani`: variante institucional inspirada en los colores de referencia de la aplicacion.
+
+Tambien incluye dos opciones tipograficas:
+
+- OpenDyslexic;
+- Helvetica.
+
+OpenDyslexic se incorpora como fuente local por tratarse de un recurso open source. EasyReading fue evaluada, pero no se incluye en el repositorio por restricciones de licencia.
+
+## Documentacion
+
+La documentacion del informe se mantiene en `docs/` como material de trabajo en LaTeX y Markdown.
+
+Esa carpeta contiene, entre otros archivos:
+
+- fases del informe;
+- tabla de hallazgos;
+- decisiones de paleta;
+- lista de pendientes;
+- trazabilidad de cambios.
+
+`docs/` puede mantenerse fuera de los commits principales si se desea separar el codigo fuente del material de informe.
+
+## Nota Sobre el Alcance
+
+Este repositorio no representa un sistema SIU Guarani real ni una aplicacion productiva. Es un prototipo academico para practicar auditoria, correccion y documentacion de accesibilidad web.
